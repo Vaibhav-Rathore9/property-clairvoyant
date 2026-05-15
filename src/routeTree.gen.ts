@@ -9,8 +9,26 @@
 // Additionally, you should also exclude this file from your linter and/or formatter to prevent it from being checked or modified.
 
 import { Route as rootRouteImport } from './routes/__root'
+import { Route as UpdatedRouteImport } from './routes/updated'
+import { Route as ComparablesRouteImport } from './routes/comparables'
+import { Route as AssistantRouteImport } from './routes/assistant'
 import { Route as IndexRouteImport } from './routes/index'
 
+const UpdatedRoute = UpdatedRouteImport.update({
+  id: '/updated',
+  path: '/updated',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const ComparablesRoute = ComparablesRouteImport.update({
+  id: '/comparables',
+  path: '/comparables',
+  getParentRoute: () => rootRouteImport,
+} as any)
+const AssistantRoute = AssistantRouteImport.update({
+  id: '/assistant',
+  path: '/assistant',
+  getParentRoute: () => rootRouteImport,
+} as any)
 const IndexRoute = IndexRouteImport.update({
   id: '/',
   path: '/',
@@ -19,28 +37,61 @@ const IndexRoute = IndexRouteImport.update({
 
 export interface FileRoutesByFullPath {
   '/': typeof IndexRoute
+  '/assistant': typeof AssistantRoute
+  '/comparables': typeof ComparablesRoute
+  '/updated': typeof UpdatedRoute
 }
 export interface FileRoutesByTo {
   '/': typeof IndexRoute
+  '/assistant': typeof AssistantRoute
+  '/comparables': typeof ComparablesRoute
+  '/updated': typeof UpdatedRoute
 }
 export interface FileRoutesById {
   __root__: typeof rootRouteImport
   '/': typeof IndexRoute
+  '/assistant': typeof AssistantRoute
+  '/comparables': typeof ComparablesRoute
+  '/updated': typeof UpdatedRoute
 }
 export interface FileRouteTypes {
   fileRoutesByFullPath: FileRoutesByFullPath
-  fullPaths: '/'
+  fullPaths: '/' | '/assistant' | '/comparables' | '/updated'
   fileRoutesByTo: FileRoutesByTo
-  to: '/'
-  id: '__root__' | '/'
+  to: '/' | '/assistant' | '/comparables' | '/updated'
+  id: '__root__' | '/' | '/assistant' | '/comparables' | '/updated'
   fileRoutesById: FileRoutesById
 }
 export interface RootRouteChildren {
   IndexRoute: typeof IndexRoute
+  AssistantRoute: typeof AssistantRoute
+  ComparablesRoute: typeof ComparablesRoute
+  UpdatedRoute: typeof UpdatedRoute
 }
 
 declare module '@tanstack/react-router' {
   interface FileRoutesByPath {
+    '/updated': {
+      id: '/updated'
+      path: '/updated'
+      fullPath: '/updated'
+      preLoaderRoute: typeof UpdatedRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/comparables': {
+      id: '/comparables'
+      path: '/comparables'
+      fullPath: '/comparables'
+      preLoaderRoute: typeof ComparablesRouteImport
+      parentRoute: typeof rootRouteImport
+    }
+    '/assistant': {
+      id: '/assistant'
+      path: '/assistant'
+      fullPath: '/assistant'
+      preLoaderRoute: typeof AssistantRouteImport
+      parentRoute: typeof rootRouteImport
+    }
     '/': {
       id: '/'
       path: '/'
@@ -53,6 +104,9 @@ declare module '@tanstack/react-router' {
 
 const rootRouteChildren: RootRouteChildren = {
   IndexRoute: IndexRoute,
+  AssistantRoute: AssistantRoute,
+  ComparablesRoute: ComparablesRoute,
+  UpdatedRoute: UpdatedRoute,
 }
 export const routeTree = rootRouteImport
   ._addFileChildren(rootRouteChildren)
