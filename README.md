@@ -1,8 +1,5 @@
 # AI-Assisted Rental Pricing Tool
 
-## Live Prototype
-[View Prototype](https://property-clairvoyant.lovable.app/)
-
 An AI-powered rental pricing copilot designed for residential rental companies to generate more accurate, explainable, and context-aware pricing recommendations.
 
 The system combines:
@@ -12,6 +9,9 @@ The system combines:
 - Analyst feedback
 
 to create a human-in-the-loop pricing workflow that continuously improves over time.
+
+## Live Prototype
+[View Prototype](https://property-clairvoyant.lovable.app/)
 
 ---
 
