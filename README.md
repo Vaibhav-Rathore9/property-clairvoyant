@@ -12,14 +12,14 @@ to create a human-in-the-loop pricing workflow that continuously improves over t
 
 ---
 
-# The Problem
+# Overview
 
 Traditional rental pricing systems rely heavily on:
 - Fixed pricing rules
 - Nearby comparable properties
 - Manual analyst adjustments
 
-This approach ignores important real-world factors such as:
+This approach often ignores important real-world factors such as:
 - School quality
 - Road noise
 - Flood risk
@@ -28,6 +28,12 @@ This approach ignores important real-world factors such as:
 - Neighborhood appeal
 
 As a result, two properties with similar size and location can receive identical pricing guidance despite having very different desirability.
+
+---
+
+# Cover Overview
+
+![Cover](screenshots/cover.png)
 
 ---
 
@@ -43,6 +49,18 @@ Core capabilities include:
 - Continuous feedback learning
 
 The goal is to help pricing analysts make faster, smarter, and more consistent pricing decisions.
+
+---
+
+# AI Pricing Assistant
+
+Displays:
+- AI-generated rental recommendation
+- Comparable property selection
+- Explainable pricing logic
+- Confidence-backed recommendations
+
+![AI Pricing Assistant](screenshots/dashboard.png)
 
 ---
 
@@ -87,7 +105,7 @@ Every analyst interaction becomes a learning signal for future recommendations.
 
 ---
 
-# Data Intelligence Layers
+# Multi-Layer Data Intelligence
 
 The AI engine combines three core data sources:
 
@@ -102,21 +120,68 @@ School ratings, crime, flood risk, walkability, transport access, noise levels
 
 ---
 
-# Analyst Workflow
+# Comparable Matching Engine
 
+The system evaluates:
+- Neighborhood similarity
+- Environmental quality
+- Historical pricing behavior
+- Lifestyle compatibility
+- Renovation quality
+
+This allows the AI to identify more contextually relevant comparable properties instead of relying only on geographic proximity.
+
+![Comparable Matching](screenshots/comps.png)
+
+---
+
+# Pricing Analyst Workflow
+
+The pricing analyst remains in control while the AI handles analytical complexity.
+
+Workflow:
 Property Intake
 ↓
-AI Generates Recommendation
+AI Recommendation
 ↓
-View Comparable Properties
+Comparable Review
 ↓
-AI Explains Pricing Logic
+AI Explanation
 ↓
-Analyst Adjusts Comparables
+Analyst Adjustments
 ↓
 Updated Recommendation
 ↓
 Feedback Stored for Learning
+
+Example analyst prompts:
+- “Remove highway-facing properties”
+- “Why is this priced higher?”
+- “Show better school district comparables”
+
+![Workflow](screenshots/workflow.png)
+
+---
+
+# Continuous Learning Through Feedback
+
+The system continuously improves using both explicit and implicit analyst feedback.
+
+## Explicit Feedback
+- Removed comparable properties
+- Manual pricing adjustments
+- Analyst-written comments
+
+## Implicit Feedback
+- Final accepted rental price
+- Time-to-rent
+- Vacancy duration
+- Occupancy success rate
+
+Example:
+If analysts repeatedly reject noisy-area properties, the AI automatically reduces their future weighting.
+
+![Feedback Loop](screenshots/feedback-loop.png)
 
 ---
 
@@ -127,12 +192,12 @@ Feedback Stored for Learning
 - Comparable relevance score
 
 ## Analyst Efficiency
-- Reduction in manual adjustments
 - Faster pricing decisions
+- Reduction in manual adjustments
 
 ## Adoption & Trust
 - Recommendation acceptance rate
-- AI explanation usage
+- AI explanation usage frequency
 
 ## Business Impact
 - Faster occupancy
@@ -143,13 +208,25 @@ Feedback Stored for Learning
 
 # Prototype
 
-The prototype demonstrates:
+This prototype demonstrates:
 - AI-assisted pricing recommendations
 - Comparable property exploration
-- Analyst feedback workflows
-- Explainable AI interaction
+- Explainable pricing workflows
+- Analyst feedback interactions
+- Continuous learning systems
 
-Built using AI-assisted design workflows for product exploration and UX demonstration.
+Built using AI-assisted design workflows for product exploration and UX demonstration purposes.
+
+---
+
+# Future Improvements
+
+Potential future enhancements:
+- Real-time market demand forecasting
+- Satellite/street-view intelligence
+- Voice-based analyst interaction
+- Dynamic pricing simulation
+- Tenant persona matching
 
 ---
 
